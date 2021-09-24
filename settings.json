@@ -1,0 +1,10 @@
+{
+  "blocks": {
+    "/blockchain/flow": true,
+    "/blockchain/flow/cadence": true,
+    "/framework/react": true,
+    "/category/foundation": true,
+    "/category/foundation/ccstoken": true
+  },
+  "name": "ccs-dappstarter"
+}

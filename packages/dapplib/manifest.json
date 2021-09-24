@@ -1,0 +1,18 @@
+{
+  "repository": {},
+  "__outputFolder": null,
+  "blocks": [
+    {
+      "category": "foundation",
+      "parameters": {}
+    },
+    {
+      "category": "foundation",
+      "name": "ccstoken",
+      "parameters": {}
+    }
+  ],
+  "blockchain": "flow",
+  "language": "cadence",
+  "framework": "react"
+}
