@@ -135,6 +135,9 @@ module.exports = class DappLib {
     if (data.endDate !== '') {
       Object.assign(metadata, { endDate: Date.parse(data.endDate) })
     }
+    if (data.source !== '') {
+      Object.assign(metadata, { source: data.source })
+    }
     let types = []
     if (data.type_1 !== '') {
       types.push(data.type_1)
@@ -143,7 +146,7 @@ module.exports = class DappLib {
       types.push(data.type_2)
     }
     if (types.length != 0) {
-      Object.assign(metadata, { type: types })
+      Object.assign(metadata, { categories: types })
     }
 
     let config = DappLib.getConfig();
@@ -159,7 +162,7 @@ module.exports = class DappLib {
         title: { value: data.title, type: t.String },
         metadata: {
           value: JSON.stringify(metadata), type: t.String
-          // {"content":"xxx","startDate":1638316800000,"type":["AIRDROP","TEST"]}
+          // {"content":"xxx","startDate":1638316800000,"categories":["AIRDROP","TEST"]}
         }
       }
     );

@@ -36,15 +36,17 @@ export default class ActivityHarness extends LitElement {
         </action-card>
       
         <action-card title="Activity - Create Activity" description="User spend token to create activity (set CCSToken first)"
-          action="createActivity" method="post" fields="account title content startDate endDate type_1 type_2">
+          action="createActivity" method="post" fields="account title content startDate endDate source type_1 type_2">
           <account-widget field="account" label="creator">
           </account-widget>
           <text-widget field="title" label="title"></text-widget>
           <text-widget field="content" label="content"></text-widget>
           <text-widget field="startDate" label="startDate"></text-widget>
           <text-widget field="endDate" label="endDate"></text-widget>
-          <text-widget field="type_1" label="type_1" placeholder="INTERACT|FORM|AIRDROP|NODE|LEARN|CREAT"></text-widget>
-          <text-widget field="type_2" label="type_2" placeholder="DEV|VOTE|TEST|WHITELIST|IXO|LUCKDRAW">
+          <text-widget field="source" label="source">
+          </text-widget>
+          <text-widget field="type_1" label="type_1" placeholder="Interact|Form|Vote|Test|Node|Learn"></text-widget>
+          <text-widget field="type_2" label="type_2" placeholder="Create|Develop|Whitelist|IXO|LuckDraw|Register">
           </text-widget>
         </action-card>
       
