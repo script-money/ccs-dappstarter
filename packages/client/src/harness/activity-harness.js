@@ -39,14 +39,16 @@ export default class ActivityHarness extends LitElement {
           action="createActivity" method="post" fields="account title content startDate endDate source type_1 type_2">
           <account-widget field="account" label="creator">
           </account-widget>
-          <text-widget field="title" label="title"></text-widget>
-          <text-widget field="content" label="content"></text-widget>
-          <text-widget field="startDate" label="startDate"></text-widget>
-          <text-widget field="endDate" label="endDate"></text-widget>
-          <text-widget field="source" label="source">
+          <text-widget field="title" label="title" placeholder="test activity 01"></text-widget>
+          <text-widget field="content" label="content(optional)"></text-widget>
+          <text-widget field="startDate" label="startDate(optional)"></text-widget>
+          <text-widget field="endDate" label="endDate(optional)"></text-widget>
+          <text-widget field="source" label="source(optional)">
           </text-widget>
-          <text-widget field="type_1" label="type_1" placeholder="Interact|Form|Vote|Test|Node|Learn"></text-widget>
-          <text-widget field="type_2" label="type_2" placeholder="Create|Develop|Whitelist|IXO|LuckDraw|Register">
+          <text-widget field="type_1" label="type_1"
+            placeholder="Interact|Form|Vote|Test|Node|Learn|Create|Develop|Whitelist|IXO|LuckDraw|Register"></text-widget>
+          <text-widget field="type_2" label="type_2(optional)"
+            placeholder="Create|Develop|Whitelist|IXO|LuckDraw|Register|Interact|Form|Vote|Test|Node|Learn">
           </text-widget>
         </action-card>
       
@@ -68,7 +70,7 @@ export default class ActivityHarness extends LitElement {
         </action-card>
       
         <action-card title="Activity - Create Airdrop" description="Create an airdrop activity" action="createAirdrop"
-          method="post" fields="account title reciever_1 reciever_2 bonus metadata">
+          method="post" fields="account title reciever_1 reciever_2 bonus content">
           <account-widget field="account" label="Admin">
           </account-widget>
           <text-widget field="title" label="title"></text-widget>
@@ -77,7 +79,7 @@ export default class ActivityHarness extends LitElement {
           <account-widget field="reciever_2" label="reciever 2">
           </account-widget>
           <number-widget field="bonus" label="bonus" placeholder="0.1"></number-widget>
-          <text-widget field="metadata" label="metadata"></text-widget>
+          <text-widget field="content" label="content"></text-widget>
         </action-card>
       
         <action-card title="Activity - Close Activity"

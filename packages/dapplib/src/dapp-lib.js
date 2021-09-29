@@ -2,7 +2,6 @@
 const Blockchain = require('./blockchain');
 const dappConfig = require('./dapp-config.json');
 const ClipboardJS = require('clipboard');
-const BN = require('bn.js'); // Required for injected code
 const manifest = require('../manifest.json');
 const t = require('@onflow/types');
 
@@ -175,6 +174,10 @@ module.exports = class DappLib {
   }
 
   static async createAirdrop(data) {
+    const metadata = {
+      content: data.content,
+      categories: ["Airdrop"]
+    }
 
     let config = DappLib.getConfig();
     let result = await Blockchain.post(
@@ -189,7 +192,7 @@ module.exports = class DappLib {
         title: { value: data.title, type: t.String },
         recievers: { value: [data.reciever_1, data.reciever_2], type: t.Array(t.Address) },
         bonus: { value: data.bonus, type: t.UFix64 },
-        metadata: { value: data.metadata, type: t.String },
+        metadata: { value: JSON.stringify(metadata), type: t.String },
       }
     );
 

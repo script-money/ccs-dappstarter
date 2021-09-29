@@ -184,9 +184,8 @@ describe('Intergretion test', async () => {
         reciever_2: USER1,
         bonus: "99.0",
         metadata: JSON.stringify({
-          endData: new Date(),
           content: "This is the special memorial for early chasers",
-          type: "airdrop"
+          type: "Airdrop"
         })
       })
 
