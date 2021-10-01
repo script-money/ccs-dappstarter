@@ -41,8 +41,8 @@ export default class ActivityHarness extends LitElement {
           </account-widget>
           <text-widget field="title" label="title" placeholder="test activity 01"></text-widget>
           <text-widget field="content" label="content(optional)"></text-widget>
-          <text-widget field="startDate" label="startDate(optional)"></text-widget>
-          <text-widget field="endDate" label="endDate(optional)"></text-widget>
+          <text-widget field="startDate" label="startDate(optional)" placeholder="2021-10-01 20:00+08:00"></text-widget>
+          <text-widget field="endDate" label="endDate(optional)" placeholder="2021-10-01 20:00+08:00"></text-widget>
           <text-widget field="source" label="source(optional)">
           </text-widget>
           <text-widget field="type_1" label="type_1"

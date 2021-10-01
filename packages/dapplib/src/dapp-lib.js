@@ -4,6 +4,7 @@ const dappConfig = require('./dapp-config.json');
 const ClipboardJS = require('clipboard');
 const manifest = require('../manifest.json');
 const t = require('@onflow/types');
+const moment = require('moment')
 
 
 module.exports = class DappLib {
@@ -129,10 +130,10 @@ module.exports = class DappLib {
       Object.assign(metadata, { content: data.content })
     }
     if (data.startDate !== '') {
-      Object.assign(metadata, { startDate: Date.parse(data.startDate) })
+      Object.assign(metadata, { startDate: moment(data.startDate) })
     }
     if (data.endDate !== '') {
-      Object.assign(metadata, { endDate: Date.parse(data.endDate) })
+      Object.assign(metadata, { endDate: moment(data.endDate) })
     }
     if (data.source !== '') {
       Object.assign(metadata, { source: data.source })
@@ -147,6 +148,7 @@ module.exports = class DappLib {
     if (types.length != 0) {
       Object.assign(metadata, { categories: types })
     }
+    console.log("metadata:", metadata)
 
     let config = DappLib.getConfig();
     let result = await Blockchain.post(
