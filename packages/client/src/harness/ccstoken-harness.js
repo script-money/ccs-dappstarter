@@ -33,9 +33,15 @@ export default class CCSTokenHarness extends LitElement {
         <!-- CCS Token -->
         <action-card title="CCS Token - Mint Tokens And Distribute" description="Mint Tokens And Distribute"
           action="mintTokensAndDistribute" method="post"
-          fields="account reciever_1 token_1 reciever_2 token_2 reciever_3 token_3 reciever_4 token_4">
+          fields="account reciever_0 token_0 reciever_1 token_1 reciever_2 token_2 reciever_3 token_3 reciever_4 token_4">
           <account-widget field="account" label="Admin">
           </account-widget>
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            Reciever 0
+          </label>
+          <text-widget field="reciever_0" label="Reciever 0" placeholder="(Optional)reciever 0"></text-widget>
+          <number-widget field="token_0" label="(Optional)reciever 0 get" placeholder="100.0">
+          </number-widget>
           <account-widget field="reciever_1" label="Reciever 1">
           </account-widget>
           <number-widget field="token_1" label="(Optional)reciever 1 get" placeholder="100.0">

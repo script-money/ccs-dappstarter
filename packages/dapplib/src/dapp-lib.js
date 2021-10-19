@@ -492,6 +492,9 @@ module.exports = class DappLib {
 
   static async mintTokensAndDistribute(data) {
     let valueArray = []
+    if (data.token_0 !== '') {
+      valueArray.push({ key: data.reciever_0, value: data.token_0 })
+    }
     if (data.token_1 !== '') {
       valueArray.push({ key: data.reciever_1, value: data.token_1 })
     }
