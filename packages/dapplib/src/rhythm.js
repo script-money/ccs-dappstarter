@@ -10,7 +10,7 @@ const flowConfig = require('./flow.json');
 
 const NEWLINE = '\n';
 const TAB = '\t';
-const BLOCK_INTERVAL = 50;
+const BLOCK_INTERVAL = 1000;
 const MODE = {
   DEFAULT: 'default',
   DEPLOY: 'deploy',
