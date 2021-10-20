@@ -38,9 +38,15 @@ export default class AccountHarness extends LitElement {
         </action-card>
       
         <action-card title="Account - Is Account Intialized" description="Is Account Intialized" action="isAccountIntialized"
-          method="get" fields="address">
+          method="get" fields="address_0 address">
           <account-widget field="address" label="Address to check">
           </account-widget>
+        </action-card>
+      
+        <action-card title="Account - Is Account Intialized(Custom)" description="Is Account Intialized(Custom)"
+          action="isAccountIntialized" method="get" fields="address">
+          <text-widget field="address" label="Custom address to check" placeholder="0x.....">
+          </text-widget>
         </action-card>
       
       </page-body>
