@@ -126,29 +126,28 @@ module.exports = class DappLib {
 
   static async createActivity(data) {
     let metadata = {}
-    if (data.content !== '') {
+    if (data.content !== '' && data.content !== undefined) {
       Object.assign(metadata, { content: data.content })
     }
-    if (data.startDate !== '') {
+    if (data.startDate !== '' && data.startDate !== undefined) {
       Object.assign(metadata, { startDate: moment(data.startDate) })
     }
-    if (data.endDate !== '') {
+    if (data.endDate !== '' && data.endDate !== undefined) {
       Object.assign(metadata, { endDate: moment(data.endDate) })
     }
-    if (data.source !== '') {
+    if (data.source !== '' && data.source !== undefined) {
       Object.assign(metadata, { source: data.source })
     }
     let types = []
-    if (data.type_1 !== '') {
+    if (data.type_1 !== '' && data.type_1 !== undefined) {
       types.push(data.type_1)
     }
-    if (data.type_2 !== '') {
+    if (data.type_2 !== '' && data.type_2 !== undefined) {
       types.push(data.type_2)
     }
     if (types.length != 0) {
       Object.assign(metadata, { categories: types })
     }
-    console.log("metadata:", metadata)
 
     let config = DappLib.getConfig();
     let result = await Blockchain.post(
@@ -163,7 +162,6 @@ module.exports = class DappLib {
         title: { value: data.title, type: t.String },
         metadata: {
           value: JSON.stringify(metadata), type: t.String
-          // {"content":"xxx","startDate":1638316800000,"categories":["AIRDROP","TEST"]}
         }
       }
     );
@@ -492,19 +490,19 @@ module.exports = class DappLib {
 
   static async mintTokensAndDistribute(data) {
     let valueArray = []
-    if (data.token_0 !== '') {
+    if (data.token_0 !== '' && data.token_0 !== undefined) {
       valueArray.push({ key: data.reciever_0, value: data.token_0 })
     }
-    if (data.token_1 !== '') {
+    if (data.token_1 !== '' && data.token_1 !== undefined) {
       valueArray.push({ key: data.reciever_1, value: data.token_1 })
     }
-    if (data.token_2 !== '') {
+    if (data.token_2 !== '' && data.token_2 !== undefined) {
       valueArray.push({ key: data.reciever_2, value: data.token_2 })
     }
-    if (data.token_3 !== '') {
+    if (data.token_3 !== '' && data.token_3 !== undefined) {
       valueArray.push({ key: data.reciever_3, value: data.token_3 })
     }
-    if (data.token_4 !== '') {
+    if (data.token_4 !== '' && data.token_4 !== undefined) {
       valueArray.push({ key: data.reciever_4, value: data.token_4 })
     }
 
