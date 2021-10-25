@@ -45,7 +45,7 @@ export default class BallotHarness extends LitElement {
           fields="account count">
           <account-widget field="account" label="Account">
           </account-widget>
-          <number-widget field="count" label="ballots to buy" placeholder="1">
+          <number-widget field="count" label="ballots to buy(max 23 due to 300 gaslimit)" placeholder="1">
           </number-widget>
         </action-card>
       
