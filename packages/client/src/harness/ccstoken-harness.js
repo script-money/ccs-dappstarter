@@ -62,9 +62,13 @@ export default class CCSTokenHarness extends LitElement {
       
         <action-card title="CCS Token - Get CCS Balance" description="Get CCS Balance" action="getCCSBalance" method="get"
           fields="account">
-          <text-widget field="account" label="account(custom)" placeholder="(Optional)address"></text-widget>
           <account-widget field="account" label="Account">
           </account-widget>
+        </action-card>
+      
+        <action-card title="CCS Token - Get CCS Balance(custom)" description="Get CCS Balance(custom)" action="getCCSBalance"
+          method="get" fields="account">
+          <text-widget field="account" label="account(custom)" placeholder="(Optional)address"></text-widget>
         </action-card>
       
         <action-card title="CCS Token - Get CCS Supply" description="Get CCS Supply" action="getCCSSupply" method="get">

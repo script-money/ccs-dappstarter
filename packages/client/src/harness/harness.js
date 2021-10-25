@@ -52,6 +52,13 @@ export default class HarnessPage extends LitElement {
         "route": "/ccstoken"
       },
       {
+        "name": "activity",
+        "title": "Activity Contract",
+        "description": "For Activity Contract test",
+        "category": "Foundations",
+        "route": "/activity"
+      },
+      {
         "name": "ballot",
         "title": "Ballot Contract",
         "description": "For Ballot Contract test",
@@ -64,13 +71,6 @@ export default class HarnessPage extends LitElement {
         "description": "For Memorials Contract test",
         "category": "Foundations",
         "route": "/memorials"
-      },
-      {
-        "name": "activity",
-        "title": "Activity Contract",
-        "description": "For Activity Contract test",
-        "category": "Foundations",
-        "route": "/activity"
       }
     ]; 
   }
