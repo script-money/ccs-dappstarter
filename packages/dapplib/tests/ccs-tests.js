@@ -137,11 +137,6 @@ describe('Intergretion test', async () => {
       assert.equal(res1.result, 0, "user2 should have 0 ballot")
       const res2 = await DappLib.getActivity({ id: "0" })
       assert.equal(res2.result.upVoteCount, 2, "upVoteCount should be 2")
-      assert.equal(
-        JSON.stringify(res2.result.voteResult),
-        JSON.stringify({ [USER1]: true, [USER2]: true }),
-        "voteResult should be {[USER1]: true, [USER2]: true}"
-      )
 
       await DappLib.vote({
         account: USER3,
@@ -153,11 +148,6 @@ describe('Intergretion test', async () => {
       const res4 = await DappLib.getActivity({ id: "0" })
       assert.equal(res4.result.upVoteCount, 2, "upVoteCount should be 2")
       assert.equal(res4.result.downVoteCount, 1, "downVoteCount should be 1")
-      assert.equal(
-        JSON.stringify(res4.result.voteResult),
-        JSON.stringify({ [USER1]: true, [USER2]: true, [USER3]: false }),
-        "voteResult should be {[USER1]: true, [USER2]: true, [USER3]: false}"
-      )
 
       try {
         await DappLib.vote({
@@ -171,18 +161,18 @@ describe('Intergretion test', async () => {
     })
 
 
-    it(`can get anyone's vote power, who no have memorials, voting power should be 1`, async () => {
+    it(`can get anyone's vote power, who no have memorials, voting power should be 0.01`, async () => {
       const ADMIN = config.accounts[0]
       const USER1 = config.accounts[1]
       const res1 = await DappLib.getVotingPower({ address: USER1 })
-      assert.equal(res1.result, 1.0, "Account no memorials has 1.0 voting power")
+      assert.equal(res1.result, 0.01, "Account no memorials has 0.01 voting power")
 
       await DappLib.createAirdrop({
         account: ADMIN,
         title: "CryptoChaser's airdrop for early support",
         reciever_1: ADMIN,
         reciever_2: USER1,
-        bonus: "99.0",
+        bonus: "99.99",
         metadata: JSON.stringify({
           content: "This is the special memorial for early chasers",
           type: "Airdrop"
